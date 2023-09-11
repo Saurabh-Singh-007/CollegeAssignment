@@ -18,7 +18,7 @@ for n in range(0,len(matrix)):
         if(matrix[n][o]==k):
             rowIndex=n
             columnIndex=o
-            break
+    break
 
 
 if(rowIndex!=-1) :      
