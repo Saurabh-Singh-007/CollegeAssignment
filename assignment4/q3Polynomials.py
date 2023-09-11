@@ -43,8 +43,11 @@ else:
 
 l=l[::-1]
 
-for k in range (0,len(l)):
-    print("("+str(l[k])+"x^"+str(k)+")"+"+",end="")
+for k in range(len(l)):
+    if k == len(l) - 1:
+        print(f"({l[k]}x^{k})")
+    else:
+        print(f"({l[k]}x^{k}) +", end=" ")
 
 
 
