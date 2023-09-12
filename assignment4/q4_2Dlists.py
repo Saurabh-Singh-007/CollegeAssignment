@@ -15,15 +15,14 @@ rowIndex=-1
 columnIndex=-1
 for n in range(0,len(matrix)):
     for o in range(0,len(matrix[n])):
-        if(matrix[n][o]==k):
+        if(matrix[n][o]==str(k)):
             rowIndex=n
             columnIndex=o
             break
 
 
 if(rowIndex!=-1) :      
-    print(rowIndex+1)
-    print(columnIndex+1)
+    print("Found at (row,column) = ("+str(n+1)+","+str(o+1)+")")
 else:
     print("Not found")
 
