@@ -34,7 +34,7 @@ y=[]
 z=[]
 o=[]
 j=[]
-for i in range(0,20):
+for i in range(0,10):
     x.append(f(i))
     y.append(g(i))
     z.append(h(i))
@@ -42,17 +42,17 @@ for i in range(0,20):
     j.append(i)
 
 
-# plt.scatter(j,x,color='red',label='f(n)')
-# plt.show()
+plt.scatter(j,x,color='red',label='f(n)')
+plt.show()
 
-# plt.scatter(j,y,color='blue',label='g(n)')
-# plt.show()
+plt.scatter(j,y,color='blue',label='g(n)')
+plt.show()
 
-# plt.scatter(j,z,color='green',label='h(n)')
-# plt.show()
+plt.scatter(j,z,color='green',label='h(n)')
+plt.show()
 
-# plt.scatter(j,o,color='black',label='k(n)')
-# plt.show()
+plt.scatter(j,o,color='black',label='k(n)')
+plt.show()
 
 
 
@@ -67,7 +67,6 @@ plt.scatter(j,z,color='green',label='h(n)')
 
 
 plt.scatter(j,o,color='black',label='k(n)')
-
 plt.legend()
 plt.show()
 
