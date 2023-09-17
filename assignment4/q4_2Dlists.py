@@ -63,10 +63,3 @@ if rows==columns:
         print("It is not a skew symmetric matrix")
 else:
     print("It is not a square matrix.")
-
-
-            
-
-
-
-
