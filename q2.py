@@ -34,7 +34,7 @@ y=[]
 z=[]
 o=[]
 j=[]
-for i in range(0,10):
+for i in range(0,50):
     x.append(f(i))
     y.append(g(i))
     z.append(h(i))
@@ -69,4 +69,10 @@ plt.scatter(j,z,color='green',label='h(n)')
 plt.scatter(j,o,color='black',label='k(n)')
 plt.legend()
 plt.show()
+
+
+print("f(n) grows exponentially")
+print("g(n) is fibonacci sequence")
+print("h(n) doubles for even n while remaining constant for odd n")
+print("k(n) is a sequence that adds the previous 2 odd numbers to the previous even number")
 
