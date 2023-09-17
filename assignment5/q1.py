@@ -1,7 +1,7 @@
 
 import pandas as pd
 import numpy as np
-
+import matplotlib.pyplot as plt
 # Use pandas to read the CSV
 csvData = pd.read_csv('Data.csv', sep=',')
 
@@ -17,11 +17,6 @@ def PopDensity(data):
     pop=[]
     for i in range(len(data)):
         pop.append(data[i][6])
-    # max_pop=max(pop)
-    # min_pop=min(pop)
-    # average_pop=sum(pop)/len(pop)
-    # median_pop=sorted(pop)[len(pop)//2]
-    # mode_pop=max((pop), key=pop.count)
     print("Maximum population density is: ", max(pop))
     print("Minimum population density is: ", min(pop))
     print("Average population density is: ", sum(pop)/len(pop))
@@ -53,7 +48,7 @@ def women_in_workforce(data):
     print("Mode percentage of women in workforce are: "+max((women_in_workforce),key=women_in_workforce.count))
     return women_in_workforce 
 
-import matplotlib.pyplot as plt
+
 x=[]
 y=[]
 z=[]
@@ -71,6 +66,10 @@ plt.xlabel('States',fontsize=14)
 plt.xticks(rotation=40)
 plt.legend()
 plt.show()
+
+
+
+
 
 
 
