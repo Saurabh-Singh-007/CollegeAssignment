@@ -1,7 +1,15 @@
-import os
-print(os.getcwd())
 
 import pandas as pd
+
+# Specify the full file path
+file_path = "/Users/saurabhsingh/Desktop/Data.csv"
+
+try:
+    # Attempt to open the file
+    df = pd.read_csv(file_path)
+    # Perform operations on the DataFrame 'df' here
+except FileNotFoundError:
+    print(f"File '{file_path}' not found.")
 
 # Use pandas to read the CSV
 csvData = pd.read_csv('Data.csv', sep=',')
