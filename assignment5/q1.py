@@ -1,15 +1,6 @@
 
 import pandas as pd
-
-# Specify the full file path
-file_path = "/Users/saurabhsingh/Desktop/Data.csv"
-
-try:
-    # Attempt to open the file
-    df = pd.read_csv(file_path)
-    # Perform operations on the DataFrame 'df' here
-except FileNotFoundError:
-    print(f"File '{file_path}' not found.")
+import numpy as np
 
 # Use pandas to read the CSV
 csvData = pd.read_csv('Data.csv', sep=',')
@@ -21,131 +12,65 @@ csvDataNum = csvData[['State', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
 data = csvDataNum.tolist()
 
 
-#Write functions working on data which provide information on i) population density, ii) percentage of marginal farmers and iii) percentage of women in the overall workforce, by giving:
- 
-# • Highest = the state with the highest value 
-# • Lowest = the state with the lowest value 
-# • Median = the median 
-# • Average = the average value 
-# • Mode = the value with highest frequency
-
-# Don’t use predefined pandas methods for these functions. Print the information in a way you find best represented.
-
-def popDensity(data):
-    # Calculate the population density for each state
-    popDensity = []
+#Function to calculate population density
+def PopDensity(data):
+    pop=[]
     for i in range(len(data)):
-        popDensity.append(data[i][1] / data[i][2])
+        pop.append(data[i][6])
+    # max_pop=max(pop)
+    # min_pop=min(pop)
+    # average_pop=sum(pop)/len(pop)
+    # median_pop=sorted(pop)[len(pop)//2]
+    # mode_pop=max((pop), key=pop.count)
+    print("Maximum population density is: ", max(pop))
+    print("Minimum population density is: ", min(pop))
+    print("Average population density is: ", sum(pop)/len(pop))
+    print("Median population density is: ", sorted(pop)[len(pop)//2])
+    print("Mode of population density is: ", max((pop), key=pop.count))
+    return pop
 
-    # Find the highest, lowest, median, average and mode population density
-    highest = max(popDensity)
-    lowest = min(popDensity)
-    median = sorted(popDensity)[len(popDensity) // 2]
-    average = sum(popDensity) / len(popDensity)
-    mode = max(set(popDensity), key=popDensity.count)
-
-    # Print the information
-    print('Population Density')
-    print('Highest: ' + str(highest))
-    print('Lowest: ' + str(lowest))
-    print('Median: ' + str(median))
-    print('Average: ' + str(average))
-    print('Mode: ' + str(mode))
-    print('')
-    return popDensity
-
-
-def PercentageMarginalFarmers(data):
-    marginalFarmers = []
+#Function to calculate marginal farmers
+def MarginalFarmers(data):
+    MarginalFarmers=[]
     for i in range(len(data)):
-        marginalFarmers.append(data[i][8])
-    highest = max(marginalFarmers)
-    lowest = min(marginalFarmers)
-    median = sorted(marginalFarmers)[len(marginalFarmers) // 2]
-    average = sum(marginalFarmers) / len(marginalFarmers)
-    mode = max(set(marginalFarmers), key=marginalFarmers.count)
+        MarginalFarmers.append(data[i][7])
+    print("Maximum marginal farmers are: ", max(MarginalFarmers))
+    print("Minimum marginal farmers are: ", min(MarginalFarmers))
+    print("Average marginal farmers are: ", sum(MarginalFarmers)/len(MarginalFarmers))
+    print("Median marginal farmers are: ", sorted(MarginalFarmers)[len(MarginalFarmers)//2])
+    print("Mode of marginal farmers are: ", max((MarginalFarmers), key=MarginalFarmers.count))
+    return MarginalFarmers
 
-    print('Percentage of Marginal Farmers')
-    print('Highest: ' + str(highest))
-    print('Lowest: ' + str(lowest))
-    print('Median: ' + str(median))
-    print('Average: ' + str(average))
-    print('Mode: ' + str(mode))
-    print('')
-    return marginalFarmers
-
-
-def PercentageWomenWorkforce(data):
-    WomenWorkforce = []
+#Function to calculate percentage women in workforce
+def women_in_workforce(data):
+    women_in_workforce=[]
     for i in range(len(data)):
-        WomenWorkforce.append(data[i][12])
-    highest = max(WomenWorkforce)
-    lowest = min(WomenWorkforce)
-    median = sorted(WomenWorkforce)[len(WomenWorkforce) // 2]
-    average = sum(WomenWorkforce) / len(WomenWorkforce)
-    mode = max(set(WomenWorkforce), key=WomenWorkforce.count)
+        women_in_workforce.append(data[i][11])
+    print("Maximum percentage women in workforce are: ",max(women_in_workforce))
+    print("Minimum percentage of women in workforce are: ",min(women_in_workforce))
+    print("Average percentage of women in workforce are: ",sum(women_in_workforce)/len(women_in_workforce))
+    print("Median percentage of women in workforce are: ",sorted(women_in_workforce)[len(women_in_workforce)//2])
+    print("Mode percentage of women in workforce are: "+max((women_in_workforce),key=women_in_workforce.count))
+    return women_in_workforce 
 
-    print('Percentage of Women Workers')
-    print('Highest: ' + str(highest))
-    print('Lowest: ' + str(lowest))
-    print('Median: ' + str(median))
-    print('Average: ' + str(average))
-    print('Mode: ' + str(mode))
-    print('')
-    return WomenWorkforce
+import matplotlib.pyplot as plt
+x=[]
+y=[]
+z=[]
+for i in range(len(data)):
+    x.append(data[i][4])
+    y.append((data[i][5])*100)
+    z.append(data[i][0])
+width=0.2
+p=np.arange(len(data))
+p1=[j+width for j in p]
 
-
-#For the given order of states in the first column of the csv, create a single bar chart which takes as variables the:
-# the percentage area with slope > 30%
-# the road density
-# For each state the 2 values should be displayed next to each other.
-
-def barChart(data):
-    # Calculate the percentage area with slope > 30% for each state
-    slope = []
-    for i in range(len(data)):
-        slope.append(data[i][3])
-
-    # Calculate the road density for each state
-    roadDensity = []
-    for i in range(len(data)):
-        roadDensity.append(data[i][4])
-
-    # Plot the bar chart
-    import matplotlib.pyplot as plt
-    import numpy as np
-
-    # Set the width of the bars
-    barWidth = 0.25
-
-    # Set the position of the bars on the x-axis
-    r1 = np.arange(len(slope))
-    r2 = [x + barWidth for x in r1]
-
-    # Make the plot
-    plt.bar(r1, slope, color='#7f6d5f', width=barWidth, edgecolor='white', label='Slope > 30%')
-    plt.bar(r2, roadDensity, color='#557f2d', width=barWidth, edgecolor='white', label='Road Density')
-
-    # Add xticks on the middle of the group bars
-    plt.xlabel('State', fontweight='bold')
-    plt.xticks([r + barWidth for r in range(len(slope))], ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar',
-                                                           'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh',
-                                                           'Jammu and Kashmir', 'Jharkhand', 'Karnataka', 'Kerala',
-                                                           'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya',
-                                                           'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan',
-                                                           'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura',
-                                                           'Uttar Pradesh', 'Uttarakhand', 'West Bengal'],
-               rotation=90)
-
-    # Create legend & Show graphic
-    plt.legend()
-    plt.show()
-
-
-
-
-
-
+plt.bar(z,x,width=width,color='black',label="Percenage Area with >30 percent slope")
+plt.bar(p1,y,width=width,color='red',label="Road Density*100")
+plt.xlabel('States',fontsize=14)
+plt.xticks(rotation=40)
+plt.legend()
+plt.show()
 
 
 
