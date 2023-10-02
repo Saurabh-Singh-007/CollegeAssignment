@@ -11,7 +11,7 @@ csvDataNum = csvData[['State', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
 # Convert the NumPy array into a list of lists
 data = csvDataNum.tolist()
 
-
+print(data)
 #Function to calculate population density
 def PopDensity(data):
     pop=[]

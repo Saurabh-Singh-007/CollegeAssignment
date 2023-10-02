@@ -34,7 +34,7 @@ y=[]
 z=[]
 o=[]
 j=[]
-for i in range(0,50):
+for i in range(0,10):
     x.append(f(i))
     y.append(g(i))
     z.append(h(i))
