@@ -15,26 +15,29 @@ plt.xlabel('Random x values', fontsize = 24)
 plt.ylabel('Random y values', fontsize = 24)
 plt.title('Increasing gaussian noise added to x and y in y = x',\
           fontsize = 35)
-#plt.show()
 
 # once problem is solved, try removing outlier (100,10000) by
 # uncommenting (remove ''') following lines:
-'''xValues = xValues[:-1]
-yValues = yValues[:-1]'''
+xValues = xValues[:-1]
+yValues = yValues[:-1]
 
 # Estimating m
 n = len(xValues)
 xValues = np.array(xValues)
+
+#creating an array of xy values
+xyValues = np.array([xValues[i]*yValues[i] for i in range(n)])
+
 #write formulae of numerator and denominator of m below:-
-'''mNum = 
-mDen = 
+mNum = n*np.sum(xyValues) - np.sum(xValues)*np.sum(yValues)
+mDen = n*np.sum(xValues**2) - (np.sum(xValues))**2
 mEst = mNum/mDen
-print(mEst)'''
+print(mEst)
 
 # Estimating c
 # write formulae for c below:-
-'''cEst = 
-print(cEst)'''
+cEst = np.sum(yValues)/n - mEst*np.sum(xValues)/n
+print(cEst)
 
 # dropping outlier/last element (100,10000) only in the view to zoomin:-
 plt.xlim(0,max(xValues[:-1]))
@@ -43,7 +46,7 @@ plt.ylim(0,max(yValues[:-1]))
 plt.scatter(xValues, yValues)
 
 # uncomment following to show estimated line fit in orange:-
-#plt.plot(xValues, mEst*xValues + cEst, color='orange')
+plt.plot(xValues, mEst*xValues + cEst, color='orange')
 
 plt.show()
 
