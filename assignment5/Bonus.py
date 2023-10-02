@@ -32,4 +32,10 @@ for i in range(len(data)):
 r=numerator/((denominator1*denominator2)**0.5)
 print("Pearson Correlation Coefficient is: ",r)
 
+#create scatter plot to determine correlation
+plt.scatter(PercentFarmerTakingLoans,perCapitaIncome)
+plt.xlabel("Percentage of farmers taking loans")
+plt.ylabel("Per Capita Income")
+plt.title("Correlation between percentage of farmers taking loans and per capita income")
+plt.show()
 
