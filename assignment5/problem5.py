@@ -21,7 +21,7 @@ plt.title('Increasing gaussian noise added to x and y in y = x',\
 xValues = xValues[:-1]
 yValues = yValues[:-1]
 
-# Estimating m
+# # Estimating m
 n = len(xValues)
 xValues = np.array(xValues)
 
@@ -49,5 +49,3 @@ plt.scatter(xValues, yValues)
 plt.plot(xValues, mEst*xValues + cEst, color='orange')
 
 plt.show()
-
-
