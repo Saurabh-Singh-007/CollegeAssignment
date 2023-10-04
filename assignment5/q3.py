@@ -25,4 +25,3 @@ if scatSubStr(w,s):
 else:
     print("No")
 
-
