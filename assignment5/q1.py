@@ -1,7 +1,12 @@
 
 import pandas as pd
+<<<<<<< HEAD
+
+
+=======
 import numpy as np
 import matplotlib.pyplot as plt
+>>>>>>> d6270e60d7ae8a21519274ec97679c648a005aa6
 # Use pandas to read the CSV
 csvData = pd.read_csv('Data.csv', sep=',')
 
@@ -11,6 +16,9 @@ csvDataNum = csvData[['State', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
 # Convert the NumPy array into a list of lists
 data = csvDataNum.tolist()
 
+<<<<<<< HEAD
+
+=======
 #Function to calculate population density
 def PopDensity(data):
     pop=[]
@@ -22,7 +30,15 @@ def PopDensity(data):
     print("Median population density is: ", sorted(pop)[len(pop)//2])
     print("Mode of population density is: ", max((pop), key=pop.count))
     return pop
+>>>>>>> 0ad826da18ccfd1d2df63cb565ff56ec6c689b9b
 
+
+
+<<<<<<< HEAD
+
+
+
+=======
 #Function to calculate marginal farmers
 def MarginalFarmers(data):
     MarginalFarmers=[]
@@ -34,7 +50,12 @@ def MarginalFarmers(data):
     print("Median marginal farmers are: ", sorted(MarginalFarmers)[len(MarginalFarmers)//2])
     print("Mode of marginal farmers are: ", max((MarginalFarmers), key=MarginalFarmers.count))
     return MarginalFarmers
+>>>>>>> d6270e60d7ae8a21519274ec97679c648a005aa6
 
+<<<<<<< HEAD
+
+
+=======
 #Function to calculate percentage women in workforce
 def women_in_workforce(data):
     women_in_workforce=[]
@@ -96,5 +117,10 @@ plt.show()
 
 
 
+<<<<<<< HEAD
+>>>>>>> d6270e60d7ae8a21519274ec97679c648a005aa6
+=======
 
 
+
+>>>>>>> 0ad826da18ccfd1d2df63cb565ff56ec6c689b9b
