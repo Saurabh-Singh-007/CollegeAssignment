@@ -6,6 +6,7 @@ def isNum(value) :
     return value.isdigit()
 
 n=len(sys.argv)-1
+
 if len(sys.argv)==1:
     print("Not a valid path , please provide a valid path")
 
