@@ -6,9 +6,11 @@ def isNum(n):
         return True
     except ValueError:
         return False
-if len(sys.argv)==1:
-    print("No file path given, Please provide exact files")
+
 n=len(sys.argv)-1
+if len(sys.argv)==1:
+    print("Not a valid path , please provide a valid path")
+
 for i in range(1,n+1):
     try:
         file_path=sys.argv[i]
