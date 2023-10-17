@@ -2,12 +2,9 @@ import matplotlib.pyplot as plt
 import sys
 
 
-def isNum(n):
-    try:
-        int(n)
-        return True
-    except ValueError:
-        return False
+def isNum(value) :
+    if value[0] in '+-' : value = value[1 :]
+    return value.isdigit()
 
 
 output=open("Output1c.txt","w")

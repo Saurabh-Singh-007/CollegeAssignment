@@ -1,11 +1,9 @@
 import matplotlib.pyplot as plt
 import sys
-def isNum(n):
-    try:
-        int(n)
-        return True
-    except ValueError:
-        return False
+
+def isNum(value) :
+    if value[0] in '+-' : value = value[1 :]
+    return value.isdigit()
 
 n=len(sys.argv)-1
 if len(sys.argv)==1:
