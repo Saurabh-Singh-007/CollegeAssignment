@@ -1,30 +1,30 @@
 import sys
 import csv
-import re 
+# import re 
 
-def clean_text(text):  # function to clean the text
-    # Remove special characters and split into words
-    cleaned_text = re.sub(r'[^a-zA-Z\s\']', '', text)
-    words = cleaned_text.split()
-    return words
+# def clean_text(text):  # function to clean the text
+#     # Remove special characters and split into words
+#     cleaned_text = re.sub(r'[^a-zA-Z\s\']', '', text)
+#     words = cleaned_text.split()
+#     return words
 
 
 if (len(sys.argv)!=2):
-    print("Please provide valid file path ... in the format python3 problem2.py problem2Input<your file here>")
+    print("Please provide valid file path ... in the format python3 problem2.py <your file here>")
     sys.exit()
 
 input_file=sys.argv[1]
 
 try:
     with open (input_file) as file:
-        text=(file.read()).lower()     # read the entire file as a single string
+        text=(file.read())     # read the entire file as a single string
 
 except FileNotFoundError or Exception:
     print(f"File {input_file} does not exist or cannot be opened.")
     sys.exit()
 
 
-words=clean_text(text)
+words=(text).split()    # split the string into words
 word_count={}
 
 for word in words:        # count the frequency of each word
@@ -49,4 +49,4 @@ with open(output_file, 'w', newline='') as csvop:
 print(f"Word frequencies have been written to {output_file}")
 
 top_10_words = list(sorted_word_count.items())[:10]
-print(top_10_words)
+print(f"Top 10 words are :{top_10_words}")

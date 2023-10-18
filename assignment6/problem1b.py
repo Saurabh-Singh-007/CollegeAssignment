@@ -1,16 +1,16 @@
 import matplotlib.pyplot as plt
 import sys
 
-def isNum(value) :
+def isNum(value) :  # function to check if the value is a number
     if value[0] in '+-' : value = value[1 :]
     return value.isdigit()
 
 n=len(sys.argv)-1
 
-if len(sys.argv)==1:
+if len(sys.argv)==1:      # check if the user has provided a file path
     print("Not a valid path , please provide a valid path")
 
-for i in range(1,n+1):
+for i in range(1,n+1):  # loop to iterate through the files
     try:
         file_path=sys.argv[i]
         xValues=[]

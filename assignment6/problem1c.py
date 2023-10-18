@@ -7,14 +7,14 @@ def isNum(value) :
     return value.isdigit()
 
 
-output=open("Output1c.txt","w")
+output=open("Output1c.txt","w")   # open the output file
 
 if len(sys.argv)==1:
     print("No file path given, Please provide exact files")
 
 n=len(sys.argv)-1
 
-for i in range(1,n+1):
+for i in range(1,n+1):   # loop to iterate through the files
     try:
         file_path=sys.argv[i]
         
@@ -50,7 +50,7 @@ for i in range(1,n+1):
                 sum_x2+=xValues[i]**2
                 sum_y2+=yValues[i]**2
             n=len(xValues)
-            r=(n*sum_xy-sum_x*sum_y)/(((n*sum_x2)-(sum_x)**2)**0.5)/((n*sum_y2)-(sum_y)**2)**0.5
+            r=(n*sum_xy-sum_x*sum_y)/(((n*sum_x2)-(sum_x)**2)**0.5)/((n*sum_y2)-(sum_y)**2)**0.5   # calculate the correlation coefficient
             output.write(str(r)+' ')
 
     except FileNotFoundError:    # exception for file not found
