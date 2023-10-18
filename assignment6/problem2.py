@@ -1,13 +1,5 @@
 import sys
 import csv
-# import re 
-
-# def clean_text(text):  # function to clean the text
-#     # Remove special characters and split into words
-#     cleaned_text = re.sub(r'[^a-zA-Z\s\']', '', text)
-#     words = cleaned_text.split()
-#     return words
-
 
 if (len(sys.argv)!=2):
     print("Please provide valid file path ... in the format python3 problem2.py <your file here>")
