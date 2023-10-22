@@ -59,5 +59,3 @@ for i in range(1,n+1):   # loop to iterate through the files
     except Exception :       # exception for any other error while processing the file
         print("An error occured while opening or processing the file")
 
-
-output.close()
