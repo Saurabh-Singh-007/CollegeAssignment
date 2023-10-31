@@ -1,0 +1,8 @@
+# Place the zip file in folder "evalq1/"
+# Run following commands in linux terminal to auto evaluate marks for q1a and q1b of 5 marks each
+
+chmod +x Q1a.sh
+./Q1a.sh
+
+chmod +x Q1b.sh
+./Q1b.sh
