@@ -1,6 +1,6 @@
 from matplotlib import pyplot as plt
 import numpy as np
-#plt.rcParams.update({'font.size': 22})
+plt.rcParams.update({'font.size': 22})
 
 # References:-
 # https://note.nkmk.me/en/python-pillow-imagedraw/
@@ -52,7 +52,6 @@ def circle(size, centre=0, boundary = 128):
     
     plt.show() # comment this line and uncomment next to save image
     #plt.savefig('problem1bOp.png', bbox_inches='tight')# change this to problem1bOp.png
- 
     return kernel_2D
 
 # main program:
