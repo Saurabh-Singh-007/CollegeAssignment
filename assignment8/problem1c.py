@@ -22,13 +22,31 @@ pixels2D = np.array(imGrayscale)
 print(pixels2D.shape)
 
 # showing/saving image
-imGrayscale.show()
-#imGrayscale.save('problem1cOutput.jpg')
+# imGrayscale.show()
+imGrayscale.save('problem1cOutput.jpg')
 
 # Write code for finding histogram here:
+plt.hist(pixels2D.flatten())
+plt.xlabel("Value of Pixels")
+plt.ylabel("Frequency")
+plt.title("Histogram of Pixels")
+plt.savefig("problem1ci.png")
+plt.show()
 
 # Write code for finding histogram of difference of pixel's intensity
 # with its left neighbour here:
+diff=[]
+pixels2D=pixels2D.flatten()
+for i in range(1,len(pixels2D)):
+    diff.append(pixels2D[i]-pixels2D[i-1])
+plt.hist(diff,bins=16)
+plt.xlabel("Difference of consecutive pixels")
+plt.ylabel("Frequency")
+plt.title("Histogram of difference of pixels")
+plt.savefig("problem1cii.png")
+plt.show()
+
+
 
 
 
