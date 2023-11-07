@@ -50,8 +50,3 @@ plt.ylabel("Frequency")
 plt.title("Histogram of difference of pixels")
 plt.savefig("problem1cii.png")
 plt.show()
-
-
-
-
-
