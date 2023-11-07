@@ -29,13 +29,16 @@ def binary_search(arr, value):
             return mid
     return -1
 
-
+print(binary_search(arr,value))
 
 def linearSearch(arr,value):
     for element in arr:
         if element==value:
             return arr.index(element)
     return -1
+
+print(linearSearch(arr,value))
+
 
 #comparing time for linear and binary search
 import time
@@ -48,4 +51,3 @@ start=time.time()
 binary_search(arr,value)
 end=time.time()
 print("Time taken for binary search is ",end-start)
-
