@@ -36,11 +36,16 @@ plt.show()
 # Write code for finding histogram of difference of pixel's intensity
 # with its left neighbour here:
 diff=[]
-pixels2D=pixels2D.flatten()
-for i in range(1,len(pixels2D)):
-    diff.append(pixels2D[i]-pixels2D[i-1])
-plt.hist(diff,bins=16)
+for row in pixels2D:
+    for i in range(len (row)):
+        if i==0 :
+            diff.append(row[i])
+        else:
+            diff.append(int(row[i])-int(row[i-1]))
+xaxis=[i for i in range (min(diff),max(diff),20)]
+plt.hist(diff,bins=20)
 plt.xlabel("Difference of consecutive pixels")
+plt.xticks(xaxis,fontsize=10)
 plt.ylabel("Frequency")
 plt.title("Histogram of difference of pixels")
 plt.savefig("problem1cii.png")
