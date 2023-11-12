@@ -45,7 +45,7 @@ import time
 start=time.time()
 linearSearch(arr,value)
 end=time.time()
-print("Time taken for linear search is ",end-start)
+print("Time taken for linear search is ",(end-start))
 
 start=time.time()
 binary_search(arr,value)
